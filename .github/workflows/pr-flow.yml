@@ -23,14 +23,14 @@ jobs:
         run: dotnet restore
 
       - name: Build ABSave .NET 5.0
-        run: dotnet build --no-restore --configuration Release
+        run: dotnet build --no-restore /p:DefineConstants="NET5_0_OR_GREATER" --configuration Release
       
       - name: Run Tests .NET 5.0
         run: dotnet test --no-build --configuration  Release
         continue-on-error: true
         
       - name: Build ABSave .NET Standard 2.1
-        run: dotnet build --no-restore -f netstandard2.1 --configuration Release
+        run: dotnet build --no-restore --configuration Release
         
       - name: Run Tests .NET Standard 2.1
         run: dotnet test --no-build --confgiuration Release
