@@ -23,7 +23,7 @@ jobs:
         run: dotnet restore
 
       - name: Build ABSave .NET 5.0
-        run: dotnet build --no-restore /p:DefineConstants="NET5_0_OR_GREATER" --configuration Release
+        run: dotnet build --no-restore --framework net5.0 --configuration Release
       
       - name: Run Tests .NET 5.0
         run: dotnet test --no-build --configuration  Release
