@@ -23,12 +23,12 @@ jobs:
         run: dotnet restore
 
       - name: Build ABSave .NET 5.0
-        run: dotnet build --no-restore -f net5.0 --configuration Release
+        run: dotnet build --no-restore -f net50 --configuration Release
       
       - name: Run Tests .NET 5.0
         run: dotnet test --no-build --configuration  Release
         
-      - name: Build AbSave .NET Standard 2.1
+      - name: Build ABSave .NET Standard 2.1
         run: dotnet build --no-restore -f netstandard2.1 --configuration Release
         
       - name: Run Tests .NET Standard 2.1
